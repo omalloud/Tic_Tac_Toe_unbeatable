@@ -1,55 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-body{
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-.copyright{
-    margin: 0 0 50px 0;
-    padding: 0;
-}
-h1{
-    font-size: 50px;
-    margin: 0;
-    padding: 0;
-}
-h3{
-    font-size: 25px;
-    margin: 0;
-    padding: 0;
+:root {
+    --bg-start: #0f1026;
+    --bg-end: #1f2544;
+    --card-bg: rgba(19, 24, 52, 0.78);
+    --line: rgba(125, 147, 255, 0.25);
+    --text-main: #f8faff;
+    --text-muted: #b8c2ff;
+    --accent: #79a8ff;
 }
 
-td{
-    border: 3px solid #000;
-    height: 100px;
-    width: 100px;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: radial-gradient(circle at top, #2c3f8e 0%, var(--bg-start) 45%, var(--bg-end) 100%);
+    color: var(--text-main);
+}
+
+.game-shell {
+    width: min(92vw, 460px);
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 28px 28px 26px;
     text-align: center;
-    font-size: 70px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.tag {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+h1 {
+    margin: 10px 0 8px;
+    font-size: clamp(34px, 8vw, 46px);
+    line-height: 1;
+}
+
+.copyright {
+    margin: 0 0 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.copyright a {
+    color: #a4beff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+.cell {
+    height: clamp(86px, 20vw, 100px);
+    width: clamp(86px, 20vw, 100px);
+    text-align: center;
+    font-size: clamp(54px, 12vw, 66px);
+    font-weight: 700;
     cursor: pointer;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: rgba(8, 12, 34, 0.85);
+    color: #ffffff;
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
 }
 
-table{
-    border-collapse: collapse;
+.cell:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(71, 114, 255, 0.35);
 }
 
-.gameOver{
+.gameOver {
     display: none;
-    margin-top: 20px;
-    width: 100px;
-    height: 50px;
-    text-align: center;
-    border: #000 solid 3px;
+    margin-top: 18px;
 }
 
+.text {
+    margin: 0 0 10px;
+    font-weight: 600;
+    color: #f2f5ff;
+}
 
-button{
-    margin-top: 10px;
+button {
+    border: 0;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f1433;
+    background: linear-gradient(140deg, #88b2ff 0%, #b4ccff 100%);
+    cursor: pointer;
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(136, 178, 255, 0.32);
+}
+
+button:active {
+    transform: translateY(0);
 }
